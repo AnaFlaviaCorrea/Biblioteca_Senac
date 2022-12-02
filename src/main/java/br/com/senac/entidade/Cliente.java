@@ -41,9 +41,9 @@ public class Cliente implements Serializable {
     @JoinColumn(name = "id_telefone")
     private Telefone telefone;    
     
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "id_endereco")
-    private Endereco endereco;
+//    @OneToOne(cascade = CascadeType.ALL)
+//    @JoinColumn(name = "id_endereco")
+    //private Endereco endereco;
 
     public Cliente() {
     }
@@ -112,13 +112,7 @@ public class Cliente implements Serializable {
         this.telefone = telefone;
     }
 
-    public Endereco getEndereco() {
-        return endereco;
-    }
-
-    public void setEndereco(Endereco endereco) {
-        this.endereco = endereco;
-    }
+  
 
     @Override
     public int hashCode() {

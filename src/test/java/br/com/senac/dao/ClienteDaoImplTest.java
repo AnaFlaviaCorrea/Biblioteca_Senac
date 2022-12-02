@@ -6,7 +6,6 @@
 package br.com.senac.dao;
 
 import br.com.senac.entidade.Cliente;
-import br.com.senac.entidade.Endereco;
 import br.com.senac.entidade.Profissao;
 import br.com.senac.entidade.Telefone;
 import br.com.senac.util.Gerador;
@@ -48,12 +47,6 @@ public class ClienteDaoImplTest {
         cliente.setTelefone(telefone);
         
         CepRest cepRest = new CepRest();
-        Endereco endereco = cepRest.pesquisarCep(Gerador.gerarCep());
-        endereco.setNumero(Gerador.gerarNumero(3));
-        endereco.setComplemento("Casa");
-        endereco.setObservacao("Px a vaca malhada");
-        
-        cliente.setEndereco(endereco);
         
         clienteDao.salvarOuAlterar(cliente, sessao);
         sessao.close();

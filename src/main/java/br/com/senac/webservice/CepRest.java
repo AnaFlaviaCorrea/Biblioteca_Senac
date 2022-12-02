@@ -5,7 +5,7 @@
  */
 package br.com.senac.webservice;
 
-import br.com.senac.entidade.Endereco;
+
 import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.WebResource;
 import com.sun.jersey.api.client.config.ClientConfig;
@@ -29,16 +29,16 @@ public class CepRest {
         webResource = client.resource("https://viacep.com.br/ws/");                                  
     }
     
-    public Endereco pesquisarCep(String cep){        
-        return webResource.path(cep).path("/json").get(Endereco.class);
-    }
-    
-    public static void main(String[] args) {
-        CepRest cepRest = new CepRest();
-        Endereco end = cepRest.pesquisarCep("88110-400");
-        
-        System.out.println("Log " + end.getLogradouro());
-        System.out.println("Cidade " + end.getLocalidade());
-    }
-    
+//    public Endereco pesquisarCep(String cep){        
+//        return webResource.path(cep).path("/json").get(Endereco.class);
+//    }
+//    
+//    public static void main(String[] args) {
+//        CepRest cepRest = new CepRest();
+//        Endereco end = cepRest.pesquisarCep("88110-400");
+//        
+//        System.out.println("Log " + end.getLogradouro());
+//        System.out.println("Cidade " + end.getLocalidade());
+//    }
+//    
 }

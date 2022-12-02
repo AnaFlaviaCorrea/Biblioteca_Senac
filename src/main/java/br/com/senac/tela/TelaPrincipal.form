@@ -105,7 +105,7 @@
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/imagem/cad_usuario.png"/>
         </Property>
-        <Property name="toolTipText" type="java.lang.String" value="Novo Usu&#xe1;rio"/>
+        <Property name="toolTipText" type="java.lang.String" value="Nova Entrada"/>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
             <EtchetBorder/>
@@ -124,7 +124,7 @@
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/imagem/cad_cliente.png"/>
         </Property>
-        <Property name="toolTipText" type="java.lang.String" value="Cadastro de Fornacedor"/>
+        <Property name="toolTipText" type="java.lang.String" value="Novo Atendimento"/>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
             <EtchetBorder/>

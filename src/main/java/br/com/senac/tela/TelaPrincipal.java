@@ -5,7 +5,7 @@
  */
 package br.com.senac.tela;
 
-import br.com.senac.entidade.Fornecedor;
+import br.com.senac.entidade.Atendimento;
 import br.com.senac.entidade.Usuario;
 import javax.swing.JOptionPane;
 
@@ -46,7 +46,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         setTitle("Biblioteca Senac");
 
         icone_cad_usuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagem/cad_usuario.png"))); // NOI18N
-        icone_cad_usuario.setToolTipText("Novo Usuário");
+        icone_cad_usuario.setToolTipText("Nova Entrada");
         icone_cad_usuario.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         icone_cad_usuario.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         icone_cad_usuario.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -56,7 +56,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
 
         icone_cad_fornecedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagem/cad_cliente.png"))); // NOI18N
-        icone_cad_fornecedor.setToolTipText("Cadastro de Fornacedor");
+        icone_cad_fornecedor.setToolTipText("Novo Atendimento");
         icone_cad_fornecedor.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         icone_cad_fornecedor.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         icone_cad_fornecedor.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -144,7 +144,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void item_pesq_usuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_item_pesq_usuarioActionPerformed
             // TODO add your handling code here:
-            new PesquisaUsuario().setVisible(true);
     }//GEN-LAST:event_item_pesq_usuarioActionPerformed
 
     private void icone_cad_fornecedorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_icone_cad_fornecedorMouseClicked

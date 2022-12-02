@@ -15,7 +15,7 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name = "fornecedor")
-public class Fornecedor implements Serializable {
+public class Atendimento implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -34,14 +34,14 @@ public class Fornecedor implements Serializable {
     
     private boolean ativo;
     
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "id_endereco")
-    private Endereco endereco;
+//    @OneToOne(cascade = CascadeType.ALL)
+//    @JoinColumn(name = "id_endereco")
+//    private Endereco endereco;
 
-    public Fornecedor() {
+    public Atendimento() {
     }
 
-    public Fornecedor(String nome, String email, Date data_cadastro, boolean ativo) {
+    public Atendimento(String nome, String email, Date data_cadastro, boolean ativo) {
         this.nome = nome;
         this.email = email;
         this.data_cadastro = data_cadastro;
@@ -89,13 +89,7 @@ public class Fornecedor implements Serializable {
     }
 
 
-    public Endereco getEndereco() {
-        return endereco;
-    }
-
-    public void setEndereco(Endereco endereco) {
-        this.endereco = endereco;
-    }
+  
 
     @Override
     public int hashCode() {
@@ -106,10 +100,10 @@ public class Fornecedor implements Serializable {
 
     @Override
     public boolean equals(Object object) {
-        if (!(object instanceof Fornecedor)) {
+        if (!(object instanceof Atendimento)) {
             return false;
         }
-        Fornecedor other = (Fornecedor) object;
+        Atendimento other = (Atendimento) object;
         return !((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id)));
     }
 

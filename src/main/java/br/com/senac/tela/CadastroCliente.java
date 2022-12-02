@@ -11,7 +11,6 @@ import br.com.senac.dao.HibernateUtil;
 import br.com.senac.dao.ProfissaoDao;
 import br.com.senac.dao.ProfissaoDaoImpl;
 import br.com.senac.entidade.Cliente;
-import br.com.senac.entidade.Endereco;
 import br.com.senac.entidade.Profissao;
 import br.com.senac.entidade.Telefone;
 import br.com.senac.webservice.CepRest;
@@ -29,7 +28,6 @@ public class CadastroCliente extends javax.swing.JFrame {
 
     private Cliente cliente;
     private Telefone telefone;
-    private Endereco endereco;
     private ClienteDao clienteDao = new ClienteDaoImpl();
     private List<Profissao> profissaos;
     private Session sessao;
@@ -44,7 +42,7 @@ public class CadastroCliente extends javax.swing.JFrame {
         initComponents();
         this.cliente = cliente;
         telefone = cliente.getTelefone();
-        endereco = cliente.getEndereco();
+        //endereco = cliente.getEndereco();
         carregaComboProfissao();
         carregarAlteracaoCliente();
     }
@@ -66,14 +64,14 @@ public class CadastroCliente extends javax.swing.JFrame {
         varProfissao.getModel()
             .setSelectedItem(cliente.getProfissao().getNome());
         //objeto endereço
-        varCep.setText(endereco.getCep());
-        varLogradouro.setText(endereco.getLogradouro());
-        varBairro.setText(endereco.getBairro());
-        varCidade.setText(endereco.getLocalidade());
-        varEstado.setText(endereco.getUf());
-        varNumero.setText(endereco.getNumero());
-        varComplemento.setText(endereco.getComplemento());
-        varObservacao.setText(endereco.getObservacao());        
+//        varCep.setText(endereco.getCep());
+//        varLogradouro.setText(endereco.getLogradouro());
+//        varBairro.setText(endereco.getBairro());
+//        varCidade.setText(endereco.getLocalidade());
+//        varEstado.setText(endereco.getUf());
+//        varNumero.setText(endereco.getNumero());
+//        varComplemento.setText(endereco.getComplemento());
+//        varObservacao.setText(endereco.getObservacao());        
     }
     
     private void carregaComboProfissao(){
@@ -511,18 +509,18 @@ public class CadastroCliente extends javax.swing.JFrame {
         cliente.setTelefone(telefone);
 
         //setando endereco
-        if (endereco.getLogradouro() != null) {
-            endereco.setNumero(varNumero.getText().trim());
-            endereco.setComplemento(varComplemento.getText().trim());
-            endereco.setObservacao(varObservacao.getText().trim());
-        } else {
-            endereco.setLogradouro(varLogradouro.getText().trim());
-            endereco.setLocalidade(varCidade.getText().trim());
-            endereco.setUf(varEstado.getText().trim());
-            endereco.setBairro(varBairro.getText().trim());
-            endereco.setCep(varCep.getText());
-        }
-        cliente.setEndereco(endereco);
+//        if (endereco.getLogradouro() != null) {
+//            endereco.setNumero(varNumero.getText().trim());
+//            endereco.setComplemento(varComplemento.getText().trim());
+//            endereco.setObservacao(varObservacao.getText().trim());
+//        } else {
+//            endereco.setLogradouro(varLogradouro.getText().trim());
+//            endereco.setLocalidade(varCidade.getText().trim());
+//            endereco.setUf(varEstado.getText().trim());
+//            endereco.setBairro(varBairro.getText().trim());
+//            endereco.setCep(varCep.getText());
+//        }
+//        cliente.setEndereco(endereco);
     }
 
     private boolean validarFormulario() {
@@ -628,23 +626,23 @@ public class CadastroCliente extends javax.swing.JFrame {
     }
 
     private void btBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btBuscarActionPerformed
-        String cep = varCep.getText().trim();
-        if (cep.length() == 9) {
-            CepRest cepRest = new CepRest();
-            endereco = cepRest.pesquisarCep(cep);
-            if (endereco.getLogradouro() == null) {
-                JOptionPane.showMessageDialog(null, "Não foi encontrado nenhum com esse número.\n"
-                        + "Preencha os dados do endereço manualmente");
-
-            } else {
-                varLogradouro.setText(endereco.getLogradouro());
-                varBairro.setText(endereco.getBairro());
-                varCidade.setText(endereco.getLocalidade());
-                varEstado.setText(endereco.getUf());
-            }
-        } else {
-            JOptionPane.showMessageDialog(null, "Preencha o CEP corretamente!");
-        }
+//        String cep = varCep.getText().trim();
+//        if (cep.length() == 9) {
+//            CepRest cepRest = new CepRest();
+//            endereco = cepRest.pesquisarCep(cep);
+//            if (endereco.getLogradouro() == null) {
+//                JOptionPane.showMessageDialog(null, "Não foi encontrado nenhum com esse número.\n"
+//                        + "Preencha os dados do endereço manualmente");
+//
+//            } else {
+//                varLogradouro.setText(endereco.getLogradouro());
+//                varBairro.setText(endereco.getBairro());
+//                varCidade.setText(endereco.getLocalidade());
+//                varEstado.setText(endereco.getUf());
+//            }
+//        } else {
+//            JOptionPane.showMessageDialog(null, "Preencha o CEP corretamente!");
+//        }
 
     }//GEN-LAST:event_btBuscarActionPerformed
 
