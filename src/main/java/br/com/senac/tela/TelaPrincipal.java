@@ -33,7 +33,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         varUsuarioLogado = new javax.swing.JLabel();
-        icone_cad_usuario = new javax.swing.JLabel();
+        icone_nova_entrada = new javax.swing.JLabel();
         icone_cad_fornecedor = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         menu_cadastro = new javax.swing.JMenu();
@@ -45,13 +45,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Biblioteca Senac");
 
-        icone_cad_usuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagem/cad_usuario.png"))); // NOI18N
-        icone_cad_usuario.setToolTipText("Nova Entrada");
-        icone_cad_usuario.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        icone_cad_usuario.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        icone_cad_usuario.addMouseListener(new java.awt.event.MouseAdapter() {
+        icone_nova_entrada.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagem/cad_usuario.png"))); // NOI18N
+        icone_nova_entrada.setToolTipText("Nova Entrada");
+        icone_nova_entrada.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        icone_nova_entrada.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        icone_nova_entrada.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                icone_cad_usuarioMouseClicked(evt);
+                icone_nova_entradaMouseClicked(evt);
             }
         });
 
@@ -67,7 +67,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         menu_cadastro.setText("Entrada");
 
-        item_cad_usuario.setText("Usuario");
+        item_cad_usuario.setText("Contador");
         item_cad_usuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 item_cad_usuarioActionPerformed(evt);
@@ -109,7 +109,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addGap(68, 68, 68)
-                .addComponent(icone_cad_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(icone_nova_entrada, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
                 .addComponent(icone_cad_fornecedor)
                 .addGap(225, 225, 225))
@@ -120,7 +120,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addComponent(varUsuarioLogado, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(49, 49, 49)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(icone_cad_usuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(icone_nova_entrada, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(icone_cad_fornecedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(0, 215, Short.MAX_VALUE))
         );
@@ -129,17 +129,17 @@ public class TelaPrincipal extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void icone_cad_usuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_icone_cad_usuarioMouseClicked
-        new CadastroUsuario().setVisible(true);
-    }//GEN-LAST:event_icone_cad_usuarioMouseClicked
+    private void icone_nova_entradaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_icone_nova_entradaMouseClicked
+        new ContadorEntrada().setVisible(true);
+    }//GEN-LAST:event_icone_nova_entradaMouseClicked
 
     private void item_cad_perfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_item_cad_perfilActionPerformed
-        new CadastroPerfil().setVisible(true);
+        new CadastroTipoAtendimento().setVisible(true);
     }//GEN-LAST:event_item_cad_perfilActionPerformed
 
     private void item_cad_usuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_item_cad_usuarioActionPerformed
         // TODO add your handling code here:
-        new CadastroUsuario().setVisible(true);
+        new ContadorEntrada().setVisible(true);
     }//GEN-LAST:event_item_cad_usuarioActionPerformed
 
     private void item_pesq_usuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_item_pesq_usuarioActionPerformed
@@ -189,7 +189,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel icone_cad_fornecedor;
-    private javax.swing.JLabel icone_cad_usuario;
+    private javax.swing.JLabel icone_nova_entrada;
     private javax.swing.JMenuItem item_cad_perfil;
     private javax.swing.JMenuItem item_cad_usuario;
     private javax.swing.JMenuItem item_pesq_usuario;

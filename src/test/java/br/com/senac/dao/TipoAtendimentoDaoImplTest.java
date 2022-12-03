@@ -5,7 +5,7 @@
  */
 package br.com.senac.dao;
 
-import br.com.senac.entidade.Perfil;
+import br.com.senac.entidade.TipoAtendimento;
 import static br.com.senac.util.Gerador.*;
 import java.util.List;
 import org.hibernate.Session;
@@ -17,19 +17,19 @@ import static org.junit.Assert.*;
  *
  * @author silvio.junior
  */
-public class PerfilDaoImplTest {
+public class TipoAtendimentoDaoImplTest {
     
-    private Perfil perfil;
-    private PerfilDao perfilDao;
+    private TipoAtendimento perfil;
+    private TipoAtendimentoDao perfilDao;
     private Session sessao;
     
-    public PerfilDaoImplTest() {
-        perfilDao = new PerfilDaoImpl();
+    public TipoAtendimentoDaoImplTest() {
+        perfilDao = new TipoAtendimentoDaoImpl();
     }
 
 //    @Test
     public void testSalvar() {
-        perfil = new Perfil(null, gerarSenha(7), "descrição bla, bla", true);
+        perfil = new TipoAtendimento(null, gerarSenha(7), "descrição bla, bla");
         sessao = HibernateUtil.abrirConexao();
         perfilDao.salvarOuAlterar(perfil, sessao);
         sessao.close();
@@ -51,12 +51,12 @@ public class PerfilDaoImplTest {
         System.out.println("pesquisarTodos");
     }
     
-    public Perfil buscarPerfilBD(){
+    public TipoAtendimento buscarPerfilBD(){
         sessao = HibernateUtil.abrirConexao();
-        Query<Perfil> consulta = sessao
+        Query<TipoAtendimento> consulta = sessao
                 .createQuery("from Perfil ");
         consulta.setMaxResults(1);
-        List<Perfil> perfis = consulta.getResultList();
+        List<TipoAtendimento> perfis = consulta.getResultList();
         sessao.close();
         if(perfis.isEmpty()){
             testSalvar();

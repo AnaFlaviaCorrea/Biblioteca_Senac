@@ -20,7 +20,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "perfil")
-public class Perfil implements Serializable {
+public class TipoAtendimento implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -33,16 +33,16 @@ public class Perfil implements Serializable {
     @Lob
     private String descricao;
     
-    private boolean ativo;
+    
 
-    public Perfil() {
+    public TipoAtendimento() {
     }
 
-    public Perfil(Long id, String nome, String descricao, boolean ativo) {
+    public TipoAtendimento(Long id, String nome, String descricao) {
         this.id = id;
         this.nome = nome;
         this.descricao = descricao;
-        this.ativo = ativo;
+       
     }
     
     public Long getId() {
@@ -69,13 +69,6 @@ public class Perfil implements Serializable {
         this.descricao = descricao;
     }
 
-    public boolean isAtivo() {
-        return ativo;
-    }
-
-    public void setAtivo(boolean ativo) {
-        this.ativo = ativo;
-    }
 
     @Override
     public int hashCode() {
@@ -87,10 +80,10 @@ public class Perfil implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Perfil)) {
+        if (!(object instanceof TipoAtendimento)) {
             return false;
         }
-        Perfil other = (Perfil) object;
+        TipoAtendimento other = (TipoAtendimento) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }

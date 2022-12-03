@@ -5,7 +5,7 @@
  */
 package br.com.senac.dao;
 
-import br.com.senac.entidade.Perfil;
+import br.com.senac.entidade.TipoAtendimento;
 import br.com.senac.entidade.Usuario;
 import static br.com.senac.util.Gerador.*;
 import java.util.List;
@@ -45,8 +45,8 @@ public class UsuarioDaoImplTest {
     public void testSalvar() {
         System.out.println("salvar");
         
-        PerfilDaoImplTest pdit = new PerfilDaoImplTest();
-        Perfil perfil = pdit.buscarPerfilBD();
+        TipoAtendimentoDaoImplTest pdit = new TipoAtendimentoDaoImplTest();
+        TipoAtendimento perfil = pdit.buscarPerfilBD();
         
         usuario = new Usuario(gerarNome(), (gerarLogin()
                     + gerarSenha(4)), gerarSenha(8), true);

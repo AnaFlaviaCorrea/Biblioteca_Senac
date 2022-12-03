@@ -195,7 +195,7 @@ public class PesquisaUsuario extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Selecione um usuário para alterar");
         } else {
             usuario = usuarios.get(linhaSelecionada);
-            new CadastroUsuario(usuario).setVisible(true);
+            new ContadorEntrada(usuario).setVisible(true);
             dispose();
         }
     }//GEN-LAST:event_btAlterarActionPerformed

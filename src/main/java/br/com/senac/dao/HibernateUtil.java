@@ -7,7 +7,7 @@ package br.com.senac.dao;
 
 import br.com.senac.entidade.Cliente;
 import br.com.senac.entidade.Atendimento;
-import br.com.senac.entidade.Perfil;
+import br.com.senac.entidade.TipoAtendimento;
 import br.com.senac.entidade.Profissao;
 import br.com.senac.entidade.Telefone;
 import br.com.senac.entidade.Usuario;
@@ -31,7 +31,7 @@ public class HibernateUtil {
             cfg.addAnnotatedClass(Usuario.class);
             cfg.addAnnotatedClass(Cliente.class);
             cfg.addAnnotatedClass(Atendimento.class);
-            cfg.addAnnotatedClass(Perfil.class);
+            cfg.addAnnotatedClass(TipoAtendimento.class);
             cfg.addAnnotatedClass(Profissao.class);
             cfg.addAnnotatedClass(Telefone.class);
            

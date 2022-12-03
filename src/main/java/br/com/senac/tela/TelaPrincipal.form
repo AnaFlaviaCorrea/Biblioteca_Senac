@@ -11,7 +11,7 @@
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="item_cad_usuario">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Usuario"/>
+                <Property name="text" type="java.lang.String" value="Contador"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="item_cad_usuarioActionPerformed"/>
@@ -76,7 +76,7 @@
           </Group>
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
-              <Component id="icone_cad_usuario" min="-2" pref="97" max="-2" attributes="0"/>
+              <Component id="icone_nova_entrada" min="-2" pref="97" max="-2" attributes="0"/>
               <EmptySpace pref="69" max="32767" attributes="0"/>
               <Component id="icone_cad_fornecedor" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="225" max="-2" attributes="0"/>
@@ -89,7 +89,7 @@
               <Component id="varUsuarioLogado" min="-2" pref="15" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="icone_cad_usuario" max="32767" attributes="0"/>
+                  <Component id="icone_nova_entrada" max="32767" attributes="0"/>
                   <Component id="icone_cad_fornecedor" max="32767" attributes="0"/>
               </Group>
               <EmptySpace min="0" pref="215" max="32767" attributes="0"/>
@@ -100,7 +100,7 @@
   <SubComponents>
     <Component class="javax.swing.JLabel" name="varUsuarioLogado">
     </Component>
-    <Component class="javax.swing.JLabel" name="icone_cad_usuario">
+    <Component class="javax.swing.JLabel" name="icone_nova_entrada">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/imagem/cad_usuario.png"/>
@@ -116,7 +116,7 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="icone_cad_usuarioMouseClicked"/>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="icone_nova_entradaMouseClicked"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="icone_cad_fornecedor">

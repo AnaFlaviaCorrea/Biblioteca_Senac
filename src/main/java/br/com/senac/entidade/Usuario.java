@@ -40,7 +40,7 @@ public class Usuario implements Serializable {
     
     @ManyToOne
     @JoinColumn(name = "id_perfil")
-    private Perfil perfil;
+    private TipoAtendimento perfil;
 
     public Usuario() {
     }
@@ -92,11 +92,11 @@ public class Usuario implements Serializable {
         this.ultimoAcesso = ultimoAcesso;
     }
 
-    public Perfil getPerfil() {
+    public TipoAtendimento getPerfil() {
         return perfil;
     }
 
-    public void setPerfil(Perfil perfil) {
+    public void setPerfil(TipoAtendimento perfil) {
         this.perfil = perfil;
     }
 

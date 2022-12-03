@@ -25,83 +25,31 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Component id="lb_titulo" alignment="1" max="32767" attributes="0"/>
+          <Group type="102" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="lb_nome" min="-2" pref="100" max="-2" attributes="0"/>
+                  <Component id="lb_cep" min="-2" pref="41" max="-2" attributes="0"/>
+                  <Component id="lb_dataCadastro" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="lb_nome1" alignment="1" min="-2" pref="100" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="varNome" pref="245" max="32767" attributes="0"/>
+                  <Component id="varComboAtendimento" max="32767" attributes="0"/>
+                  <Component id="varData" max="32767" attributes="0"/>
+              </Group>
+              <EmptySpace pref="177" max="32767" attributes="0"/>
+          </Group>
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="242" max="-2" attributes="0"/>
               <Component id="btSalvar" min="-2" pref="129" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
           </Group>
-          <Group type="102" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="lb_tipo5" alignment="1" max="32767" attributes="0"/>
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="0" pref="6" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="lb_situacao" min="-2" pref="80" max="-2" attributes="0"/>
-                          <Component id="lb_nome" min="-2" pref="100" max="-2" attributes="0"/>
-                          <Component id="lb_cep" min="-2" pref="41" max="-2" attributes="0"/>
-                          <Component id="lb_bairro" alignment="1" min="-2" pref="100" max="-2" attributes="0"/>
-                          <Component id="lb_Uf" alignment="1" min="-2" pref="100" max="-2" attributes="0"/>
-                          <Component id="lb_dataCadastro" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Component id="lb_nome1" alignment="1" min="-2" pref="100" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-              </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                  <Component id="varBairro" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="varData" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="varEstado" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jScrollPane1" alignment="0" max="32767" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="lb_cidade" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
-                                          <Component id="lb_cpf5" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="varNumero" min="-2" pref="67" max="-2" attributes="0"/>
-                                          <Component id="varCidade" min="-2" pref="222" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-                                      <Component id="lb_cpf6" min="-2" pref="100" max="-2" attributes="0"/>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="jScrollPane2" max="32767" attributes="0"/>
-                                  </Group>
-                              </Group>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="varCep" min="-2" pref="85" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="btBuscar" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="lb_logradouro" min="-2" pref="100" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="varLogradouro" min="-2" pref="205" max="-2" attributes="0"/>
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <EmptySpace min="-2" pref="221" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="varNome" alignment="0" min="-2" pref="245" max="-2" attributes="0"/>
-                          <Component id="varEmail" min="-2" pref="245" max="-2" attributes="0"/>
-                          <Component id="btAtivo" min="-2" pref="101" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="32767" attributes="0"/>
-                  </Group>
-              </Group>
+              <Component id="lb_cpf6" min="-2" pref="100" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
+              <Component id="jScrollPane2" min="-2" pref="245" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -118,7 +66,7 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lb_nome1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="varEmail" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="varComboAtendimento" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -126,47 +74,13 @@
                   <Component id="varData" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="lb_cep" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="varCep" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btBuscar" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="lb_logradouro" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="varLogradouro" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
+              <Component id="lb_cep" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="lb_bairro" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="varBairro" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="lb_cidade" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="varCidade" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="lb_Uf" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="varEstado" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="lb_cpf5" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="varNumero" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                      <Component id="lb_tipo5" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
-                          <Component id="lb_cpf6" min="-2" max="-2" attributes="0"/>
-                          <Component id="jScrollPane2" alignment="0" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
+                  <Component id="lb_cpf6" min="-2" max="-2" attributes="0"/>
+                  <Component id="jScrollPane2" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="38" max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="lb_situacao" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btAtivo" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
+              <EmptySpace pref="86" max="32767" attributes="0"/>
               <Component id="btSalvar" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
           </Group>
@@ -180,7 +94,7 @@
           <Font name="Tahoma" size="24" style="1"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
-        <Property name="text" type="java.lang.String" value="Cadastro de Fornecedor"/>
+        <Property name="text" type="java.lang.String" value="Cadastro Atendimento"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lb_nome">
@@ -200,10 +114,8 @@
           <Font name="Tahoma" size="12" style="1"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="4"/>
-        <Property name="text" type="java.lang.String" value="E-mail: "/>
+        <Property name="text" type="java.lang.String" value="Tipo de Atendimento: "/>
       </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="varEmail">
     </Component>
     <Component class="javax.swing.JLabel" name="lb_dataCadastro">
       <Properties>
@@ -211,7 +123,7 @@
           <Font name="Tahoma" size="12" style="1"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="4"/>
-        <Property name="text" type="java.lang.String" value="Data do Cadastro: "/>
+        <Property name="text" type="java.lang.String" value="Data do Atendimento: "/>
       </Properties>
     </Component>
     <Component class="javax.swing.JFormattedTextField" name="varData">
@@ -227,105 +139,7 @@
           <Font name="Tahoma" size="12" style="1"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="4"/>
-        <Property name="text" type="java.lang.String" value="CEP:"/>
       </Properties>
-    </Component>
-    <Component class="javax.swing.JFormattedTextField" name="varCep">
-      <Properties>
-        <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
-          <Format format="#####-###" subtype="-1" type="5"/>
-        </Property>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="btBuscar">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Tahoma" size="12" style="1"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Buscar"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btBuscarActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JLabel" name="lb_bairro">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Tahoma" size="12" style="1"/>
-        </Property>
-        <Property name="horizontalAlignment" type="int" value="4"/>
-        <Property name="text" type="java.lang.String" value="Bairro:"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="varBairro">
-    </Component>
-    <Component class="javax.swing.JLabel" name="lb_Uf">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Tahoma" size="12" style="1"/>
-        </Property>
-        <Property name="horizontalAlignment" type="int" value="4"/>
-        <Property name="text" type="java.lang.String" value="Estado:"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="varEstado">
-    </Component>
-    <Component class="javax.swing.JLabel" name="lb_logradouro">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Tahoma" size="12" style="1"/>
-        </Property>
-        <Property name="horizontalAlignment" type="int" value="4"/>
-        <Property name="text" type="java.lang.String" value="Logradouro:"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="varLogradouro">
-    </Component>
-    <Component class="javax.swing.JLabel" name="lb_cidade">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Tahoma" size="12" style="1"/>
-        </Property>
-        <Property name="horizontalAlignment" type="int" value="4"/>
-        <Property name="text" type="java.lang.String" value="Cidade:"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="varCidade">
-    </Component>
-    <Component class="javax.swing.JLabel" name="lb_tipo5">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Tahoma" size="12" style="1"/>
-        </Property>
-        <Property name="horizontalAlignment" type="int" value="4"/>
-        <Property name="text" type="java.lang.String" value="Complemento:"/>
-      </Properties>
-    </Component>
-    <Container class="javax.swing.JScrollPane" name="jScrollPane1">
-      <AuxValues>
-        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-      </AuxValues>
-
-      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-      <SubComponents>
-        <Component class="javax.swing.JTextArea" name="varComplemento">
-          <Properties>
-            <Property name="columns" type="int" value="20"/>
-            <Property name="rows" type="int" value="5"/>
-          </Properties>
-        </Component>
-      </SubComponents>
-    </Container>
-    <Component class="javax.swing.JLabel" name="lb_cpf5">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Tahoma" size="12" style="1"/>
-        </Property>
-        <Property name="horizontalAlignment" type="int" value="4"/>
-        <Property name="text" type="java.lang.String" value="N&#xfa;mero:"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="varNumero">
     </Component>
     <Component class="javax.swing.JButton" name="btSalvar">
       <Properties>
@@ -362,25 +176,20 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JLabel" name="lb_situacao">
+    <Component class="javax.swing.JComboBox" name="varComboAtendimento">
       <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Tahoma" size="12" style="1"/>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="1">
+            <StringItem index="0" value="Selecione um atendimento..."/>
+          </StringArray>
         </Property>
-        <Property name="horizontalAlignment" type="int" value="4"/>
-        <Property name="text" type="java.lang.String" value="Situa&#xe7;&#xe3;o:"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="btAtivo">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Tahoma" size="12" style="1"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Ativo"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btAtivoActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="varComboAtendimentoActionPerformed"/>
       </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
     </Component>
   </SubComponents>
 </Form>

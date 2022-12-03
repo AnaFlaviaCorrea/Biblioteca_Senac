@@ -5,7 +5,7 @@
  */
 package br.com.senac.dao;
 
-import br.com.senac.entidade.Perfil;
+import br.com.senac.entidade.TipoAtendimento;
 import java.io.Serializable;
 import java.util.List;
 import org.hibernate.HibernateException;
@@ -16,19 +16,19 @@ import org.hibernate.query.Query;
  *
  * @author silvio.junior
  */
-public class PerfilDaoImpl extends BaseDaoImpl<Perfil, Long>
-        implements PerfilDao, Serializable {
+public class TipoAtendimentoDaoImpl extends BaseDaoImpl<TipoAtendimento, Long>
+        implements TipoAtendimentoDao, Serializable {
 
     @Override
-    public Perfil pesquisarPorId(Long id, Session sessao)
+    public TipoAtendimento pesquisarPorId(Long id, Session sessao)
             throws HibernateException {
-        return sessao.find(Perfil.class, id);
+        return sessao.find(TipoAtendimento.class, id);
     }
 
     @Override
-    public List<Perfil> pesquisarPorNome(String nome,
+    public List<TipoAtendimento> pesquisarPorNome(String nome,
             Session sessao) throws HibernateException {
-        Query<Perfil> consulta = sessao
+        Query<TipoAtendimento> consulta = sessao
                 .createQuery("from Perfil p where "
                         + "p.nome like :nome order by p.nome");
         consulta.setParameter("nome", "%" + nome + "%");
@@ -36,16 +36,16 @@ public class PerfilDaoImpl extends BaseDaoImpl<Perfil, Long>
     }
 
     @Override
-    public List<Perfil> pesquisarTodos(Session sessao)
+    public List<TipoAtendimento> pesquisarTodos(Session sessao)
             throws HibernateException {
-        Query<Perfil> consulta = sessao
+        Query<TipoAtendimento> consulta = sessao
                 .createQuery("from Perfil p order by p.nome");
         return consulta.getResultList();
     }
 
     @Override
-    public List<Perfil> pesquisarTodosAtivo(Session sessao) throws HibernateException {
-        Query<Perfil> consulta = sessao
+    public List<TipoAtendimento> pesquisarTodosAtivo(Session sessao) throws HibernateException {
+        Query<TipoAtendimento> consulta = sessao
                 .createQuery("from Perfil p where p.ativo = true order by p.nome");
         return consulta.getResultList();
 
