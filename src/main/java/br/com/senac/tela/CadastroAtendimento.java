@@ -25,11 +25,11 @@ import java.util.List;
  */
 public class CadastroAtendimento extends javax.swing.JFrame {
 
-    private Atendimento fornecedor;
-   // private Endereco endereco;
-    private AtendimentoDao fornecedorDao = new AtendimentoDaoImpl();
+    private Atendimento atendimento;
+    // private Endereco endereco;
+    private AtendimentoDao atendimentoDao = new AtendimentoDaoImpl();
     private Session sessao;
-    private List<TipoAtendimento> perfis;
+    private List<TipoAtendimento> atendimentos;
 
     /**
      * Creates new form CadastroFornecedor
@@ -37,18 +37,18 @@ public class CadastroAtendimento extends javax.swing.JFrame {
     public CadastroAtendimento() {
         initComponents();
         carregarComboTipoAtendimento();
-       
+
         varData.setVisible(false);
-      
+
     }
 
-    public CadastroAtendimento(Atendimento fornecedor) {
+    public CadastroAtendimento(Atendimento atendimento) {
         initComponents();
         lb_titulo.setText("Alterar Cliente");
         btSalvar.setText("Alterar");
-        carregarAlteracaoFornecedor(fornecedor);
+        carregarAlteracaoFornecedor(atendimento);
         varData.setVisible(false);
-        this.fornecedor = fornecedor;
+        this.atendimento = atendimento;
         //endereco = fornecedor.getEndereco();
 //        if (fornecedor.isAtivo()) {
 //            btAtivo.setText("Ativo");
@@ -184,10 +184,9 @@ public class CadastroAtendimento extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-private void carregarAlteracaoFornecedor(Atendimento fornecedor1) {
-        this.fornecedor = fornecedor1;
-        varNome.setText(fornecedor1.getNome());
-       
+private void carregarAlteracaoFornecedor(Atendimento atendimento1) {
+        this.atendimento = atendimento1;
+        varNome.setText(atendimento1.getNome());
 //        varBairro.setText(fornecedor1.getEndereco().getLocalidade());
 //        varLogradouro.setText(fornecedor1.getEndereco().getLogradouro());
 //        varCep.setText(fornecedor1.getEndereco().getCep());
@@ -202,26 +201,23 @@ private void carregarAlteracaoFornecedor(Atendimento fornecedor1) {
     private void btSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSalvarActionPerformed
 
         if (validarFormulario()) {
-            if (fornecedor == null) {
-                fornecedor = new Atendimento();
-                fornecedor.setAtivo(true);
-                fornecedor.getData_cadastro();
-                
+            if (atendimento == null) {
+                atendimento = new Atendimento();
+                atendimento.getData_cadastro();
 
             }
 
             carregarFormulario();
             try {
                 sessao = HibernateUtil.abrirConexao();
-                fornecedorDao.salvarOuAlterar(fornecedor, sessao);
-                JOptionPane.showMessageDialog(null, "Fornecedor salvo com sucesso!");
+                atendimentoDao.salvarOuAlterar(atendimento, sessao);
+                JOptionPane.showMessageDialog(null, "Atendimento salvo com sucesso!");
                 dispose();
                 new TelaPrincipal().setVisible(true);
             } catch (HibernateException e) {
-                System.out.println("Erro ao salvar fornecedor!");
-                if (e.getMessage().contains(fornecedor.getEmail())) {
-                    JOptionPane.showMessageDialog(null, "Já existe fornecedor com este email");
-                }
+                System.out.println("Erro ao salvar !");
+
+                JOptionPane.showMessageDialog(null, "Já existe fornecedor com este email");
             } finally {
                 sessao.close();
             }
@@ -229,13 +225,13 @@ private void carregarAlteracaoFornecedor(Atendimento fornecedor1) {
         }
 
     }//GEN-LAST:event_btSalvarActionPerformed
- private void carregarComboTipoAtendimento() {
+    private void carregarComboTipoAtendimento() {
         TipoAtendimentoDao perfilDao = new TipoAtendimentoDaoImpl();
         try {
             sessao = HibernateUtil.abrirConexao();
-            perfis = perfilDao.pesquisarTodosAtivo(sessao);
-            perfis.forEach(perfil -> {
-                varComboAtendimento.addItem(perfil.getNome());
+            atendimentos = perfilDao.pesquisarTodos(sessao);
+            atendimentos.forEach(perfil -> {
+                varComboAtendimento.addItem(atendimento.getNome());
             });
         } catch (HibernateException e) {
             System.out.println("Erro ao pesquisar todos perfil " + e.getMessage());
@@ -253,18 +249,16 @@ private void carregarAlteracaoFornecedor(Atendimento fornecedor1) {
             JOptionPane.showMessageDialog(null, "Digite o nome corretamente!");
             return false;
         }
-       // String email = varEmail.getText().trim();
+        // String email = varEmail.getText().trim();
         return false;
-       
+
     }
-        
-    
 
     private void carregarFormulario() {
 
-        fornecedor.setNome(varNome.getText().trim());
-       // fornecedor.setEmail(varEmail.getText().trim());
-        fornecedor.getData_cadastro();
+        atendimento.setNome(varNome.getText().trim());
+        // fornecedor.setEmail(varEmail.getText().trim());
+        atendimento.getData_cadastro();
 
 //        if (endereco.getLogradouro() != null) {
 //            endereco.setNumero(varNumero.getText().trim());
@@ -278,7 +272,6 @@ private void carregarAlteracaoFornecedor(Atendimento fornecedor1) {
 //            endereco.setCep(varCep.getText());
 //        }
 //        fornecedor.setEndereco(endereco);
-
     }
 
     private boolean validarMenorQue3(String valor) {
@@ -338,5 +331,4 @@ private void carregarAlteracaoFornecedor(Atendimento fornecedor1) {
     private javax.swing.JTextArea varObservacao;
     // End of variables declaration//GEN-END:variables
 
-  
 }

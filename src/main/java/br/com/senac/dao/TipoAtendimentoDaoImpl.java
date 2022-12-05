@@ -29,7 +29,7 @@ public class TipoAtendimentoDaoImpl extends BaseDaoImpl<TipoAtendimento, Long>
     public List<TipoAtendimento> pesquisarPorNome(String nome,
             Session sessao) throws HibernateException {
         Query<TipoAtendimento> consulta = sessao
-                .createQuery("from Perfil p where "
+                .createQuery("from TipoAtendimento p where "
                         + "p.nome like :nome order by p.nome");
         consulta.setParameter("nome", "%" + nome + "%");
         return consulta.getResultList();
@@ -39,16 +39,9 @@ public class TipoAtendimentoDaoImpl extends BaseDaoImpl<TipoAtendimento, Long>
     public List<TipoAtendimento> pesquisarTodos(Session sessao)
             throws HibernateException {
         Query<TipoAtendimento> consulta = sessao
-                .createQuery("from Perfil p order by p.nome");
+                .createQuery("from TipoAtendimento p order by p.nome");
         return consulta.getResultList();
     }
 
-    @Override
-    public List<TipoAtendimento> pesquisarTodosAtivo(Session sessao) throws HibernateException {
-        Query<TipoAtendimento> consulta = sessao
-                .createQuery("from Perfil p where p.ativo = true order by p.nome");
-        return consulta.getResultList();
-
-    }
-
+   
 }

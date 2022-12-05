@@ -5,11 +5,9 @@
  */
 package br.com.senac.dao;
 
-import br.com.senac.entidade.Cliente;
+import br.com.senac.entidade.ContadorEntrada;
 import br.com.senac.entidade.Atendimento;
 import br.com.senac.entidade.TipoAtendimento;
-import br.com.senac.entidade.Profissao;
-import br.com.senac.entidade.Telefone;
 import br.com.senac.entidade.Usuario;
 import org.hibernate.*;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
@@ -29,11 +27,9 @@ public class HibernateUtil {
         try {
             Configuration cfg = new Configuration();
             cfg.addAnnotatedClass(Usuario.class);
-            cfg.addAnnotatedClass(Cliente.class);
+            cfg.addAnnotatedClass(ContadorEntrada.class);
             cfg.addAnnotatedClass(Atendimento.class);
             cfg.addAnnotatedClass(TipoAtendimento.class);
-            cfg.addAnnotatedClass(Profissao.class);
-            cfg.addAnnotatedClass(Telefone.class);
            
 
             cfg.configure("/META-INF/hibernate.cfg.xml");

@@ -27,7 +27,7 @@ public class ContadorEntrada extends javax.swing.JFrame {
     private UsuarioDao usuarioDao = new UsuarioDaoImpl();
     private Session sessao;
     private Usuario usuario;
-    private List<TipoAtendimento> perfis;
+    private List<TipoAtendimento> atendimentos;
 
     public ContadorEntrada() {
         initComponents();
@@ -114,6 +114,7 @@ public class ContadorEntrada extends javax.swing.JFrame {
         }
         btSalvar.setText("" + contador);
         JOptionPane.showMessageDialog(null,"Visitante contabilizados");
+        sessao.close();
     }//GEN-LAST:event_btSalvarMouseClicked
 
 //    private boolean validarFormulario() {

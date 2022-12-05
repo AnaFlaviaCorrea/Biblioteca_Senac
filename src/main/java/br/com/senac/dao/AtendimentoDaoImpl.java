@@ -27,7 +27,7 @@ public class AtendimentoDaoImpl extends BaseDaoImpl<Atendimento, Long>
     @Override
     public List<Atendimento> pesquisarPorNome(String nome, Session sessao) throws HibernateException {
         Query<Atendimento> consulta = sessao
-        .createQuery("from Fornecedor c where c.nome like :nome order by c.nome");
+        .createQuery("from Atendimento c where c.nome like :nome order by c.nome");
         consulta.setParameter("nome", "%" + nome + "%");
         return consulta.getResultList();
     }

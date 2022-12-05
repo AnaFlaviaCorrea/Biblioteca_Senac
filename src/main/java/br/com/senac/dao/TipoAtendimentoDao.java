@@ -22,8 +22,7 @@ public interface TipoAtendimentoDao extends BaseDao<TipoAtendimento, Long> {
     List<TipoAtendimento> pesquisarTodos(Session sessao)
                                throws HibernateException;
     
-    List<TipoAtendimento> pesquisarTodosAtivo(Session sessao)
-                               throws HibernateException;
+  
     
     
 }
