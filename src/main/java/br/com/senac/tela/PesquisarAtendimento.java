@@ -20,9 +20,9 @@ import org.hibernate.Session;
  * @author ana.correa8
  */
 public class PesquisarAtendimento extends javax.swing.JFrame {
-    private Atendimento fornecedor;
-    private List<Atendimento>fornecedores;
-    private AtendimentoDao fornecedorDao = new AtendimentoDaoImpl();
+    private Atendimento atendimento;
+    private List<Atendimento>atendimentos;
+    private AtendimentoDao atendimentoDao = new AtendimentoDaoImpl();
     private Session sessao;
 
     /**
@@ -46,7 +46,7 @@ public class PesquisarAtendimento extends javax.swing.JFrame {
         lb_nome = new javax.swing.JLabel();
         varNome = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tbFornecedor = new javax.swing.JTable();
+        tbAtendimento = new javax.swing.JTable();
         btPesquisar = new javax.swing.JButton();
         btAlterar = new javax.swing.JButton();
 
@@ -54,25 +54,25 @@ public class PesquisarAtendimento extends javax.swing.JFrame {
 
         lb_titulo.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         lb_titulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lb_titulo.setText("Pesquisar Fornecedor");
+        lb_titulo.setText("Pesquisar Atendimento");
 
         lb_nome.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         lb_nome.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lb_nome.setText("Nome:");
 
-        tbFornecedor.setModel(new javax.swing.table.DefaultTableModel(
+        tbAtendimento.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
             },
             new String [] {
-                "Nome", "Email", "Data de Cadastro", "Situação", "Endereço"
+                "Nome", "Data do Atendimento"
             }
         ));
-        tbFornecedor.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        jScrollPane1.setViewportView(tbFornecedor);
+        tbAtendimento.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jScrollPane1.setViewportView(tbAtendimento);
 
         btPesquisar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btPesquisar.setText("Pesquisar");
@@ -135,12 +135,12 @@ public class PesquisarAtendimento extends javax.swing.JFrame {
         if(nome.length() > 2){
             try {
                 sessao = HibernateUtil.abrirConexao();
-                fornecedores = fornecedorDao.pesquisarPorNome(nome, sessao);
-                if(fornecedores.isEmpty()){
+                atendimentos = atendimentoDao.pesquisarPorNome(nome, sessao);
+                if(atendimentos.isEmpty()){
                     JOptionPane.showMessageDialog(null,
                         "Nenhum valor encontrado.");
                 }else{
-                    carregarTabelaFornecedor();
+                    carregarTabelaAtendimento();
                     btAlterar.setVisible(true);
                 }
             } catch (HibernateException e) {
@@ -156,27 +156,26 @@ public class PesquisarAtendimento extends javax.swing.JFrame {
     }//GEN-LAST:event_btPesquisarActionPerformed
 
     private void btAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAlterarActionPerformed
-        int linhaSelecionada = tbFornecedor.getSelectedRow();
+        int linhaSelecionada = tbAtendimento.getSelectedRow();
         if(linhaSelecionada < 0){
             JOptionPane.showMessageDialog(null, "Selecione uma " + "linha para alterar!");
            
         }else{
                 
-            fornecedor = fornecedores.get(linhaSelecionada);
-            new CadastroAtendimento(fornecedor).setVisible(true);
+            atendimento = atendimentos.get(linhaSelecionada);
+            new CadastroAtendimento(atendimento).setVisible(true);
             dispose();
         }
     }//GEN-LAST:event_btAlterarActionPerformed
-private void carregarTabelaFornecedor(){
+private void carregarTabelaAtendimento(){
         DefaultTableModel defaultTable = (DefaultTableModel)
-                                         tbFornecedor.getModel();
+                                         tbAtendimento.getModel();
         defaultTable.setNumRows(0);
-        fornecedores.stream().forEach(forne -> {
+        atendimentos.stream().forEach(atendi -> {
             defaultTable.addRow(new Object[]{
-               forne.getNome(), 
-               forne.getEmail(),
-               forne.getData_cadastro(),
-               forne.isAtivo()? "Ativo" : "Inativo",
+               atendi.getNome(), 
+               atendi.getData_cadastro(),
+              
                
               
             });
@@ -224,7 +223,7 @@ private void carregarTabelaFornecedor(){
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lb_nome;
     private javax.swing.JLabel lb_titulo;
-    private javax.swing.JTable tbFornecedor;
+    private javax.swing.JTable tbAtendimento;
     private javax.swing.JTextField varNome;
     // End of variables declaration//GEN-END:variables
 }
