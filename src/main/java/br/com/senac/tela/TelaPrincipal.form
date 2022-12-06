@@ -34,7 +34,7 @@
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="item_pesq_usuario">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Cliente"/>
+                <Property name="text" type="java.lang.String" value="Atendimento"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="item_pesq_usuarioActionPerformed"/>
@@ -92,7 +92,7 @@
                   <Component id="icone_nova_entrada" max="32767" attributes="0"/>
                   <Component id="icone_cad_fornecedor" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace min="0" pref="215" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="216" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>

@@ -87,7 +87,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         menu_pesquisa.setText("Cadastro atendimento");
 
-        item_pesq_usuario.setText("Cliente");
+        item_pesq_usuario.setText("Atendimento");
         item_pesq_usuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 item_pesq_usuarioActionPerformed(evt);
@@ -122,7 +122,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(icone_nova_entrada, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(icone_cad_fornecedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(0, 215, Short.MAX_VALUE))
+                .addGap(0, 216, Short.MAX_VALUE))
         );
 
         pack();
