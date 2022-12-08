@@ -15,12 +15,12 @@ import br.com.senac.dao.TipoAtendimentoDao;
 
 /**
  *
- * @author silvio.junior
+ * @author ana.correa8
  */
 public class CadastroTipoAtendimento extends javax.swing.JFrame {
 
-    private TipoAtendimento perfil;
-    private TipoAtendimentoDao perfilDao = new TipoAtendimentoDaoImpl();
+    private TipoAtendimento tipo;
+    private TipoAtendimentoDao tipoDao = new TipoAtendimentoDaoImpl();
     private Session sessao;
 
     /**
@@ -31,11 +31,11 @@ public class CadastroTipoAtendimento extends javax.swing.JFrame {
        
     }
 
-    public CadastroTipoAtendimento(TipoAtendimento perfil) {
+    public CadastroTipoAtendimento(TipoAtendimento tipo) {
         initComponents();
-        this.perfil = perfil;
-        varNome.setText(perfil.getNome());
-        varDescricao.setText(perfil.getDescricao());
+        this.tipo = tipo;
+        varNome.setText(tipo.getNome());
+        varDescricao.setText(tipo.getDescricao());
         btSalvar.setText("Alterar");
         lb_titulo.setText("Alterar Perfil");
 
@@ -134,22 +134,22 @@ public class CadastroTipoAtendimento extends javax.swing.JFrame {
         if (nome.length() < 3) {
             JOptionPane.showMessageDialog(null, "Preencha o nome corretamente!");
         } else {
-            if (perfil == null) {
-                perfil = new TipoAtendimento();
+            if (tipo == null) {
+                tipo = new TipoAtendimento();
                 //perfil.setAtivo(true);
             } else {
                 //buscarValorAtivoBotao();
             }
             try {
                 sessao = HibernateUtil.abrirConexao();
-                perfil.setNome(varNome.getText().trim());
-                perfil.setDescricao(varDescricao.getText().trim());
-                perfilDao.salvarOuAlterar(perfil, sessao);
+                tipo.setNome(varNome.getText().trim());
+                tipo.setDescricao(varDescricao.getText().trim());
+                tipoDao.salvarOuAlterar(tipo, sessao);
                 JOptionPane.showMessageDialog(null,
-                        "Perfil salvo com sucesso!");
+                        "Tipo de atendimento salvo com sucesso!");
                 dispose();
             } catch (HibernateException e) {
-                System.out.println("Erro ao salvar perfil: "
+                System.out.println("Erro ao salvar tipo de atendimento: "
                         + e.getMessage());
             } finally {
                 sessao.close();

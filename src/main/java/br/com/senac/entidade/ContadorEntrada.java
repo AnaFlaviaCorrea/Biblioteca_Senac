@@ -14,13 +14,16 @@ import javax.persistence.*;
  * @author silvio.junior
  */
 @Entity
-@Table(name = "cliente")
+@Table(name = "ContadorEntrada")
 public class ContadorEntrada implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    
+    @Column(nullable = false)
+    private int quantidade;
         
     @Column(nullable = false)
     @Temporal(TemporalType.DATE)
@@ -41,6 +44,15 @@ public class ContadorEntrada implements Serializable {
         return id;
     }
 
+    public int getQuantidade() {
+        return quantidade;
+    }
+
+    public void setQuantidade(int quantidade) {
+        this.quantidade = quantidade;
+    }
+
+    
     public Date getData_cadastro() {
         return data_cadastro;
     }

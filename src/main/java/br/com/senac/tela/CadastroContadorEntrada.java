@@ -5,6 +5,8 @@
  */
 package br.com.senac.tela;
 
+import br.com.senac.dao.ContadorEntradaDao;
+import br.com.senac.dao.ContadorEntradaDaoImpl;
 import br.com.senac.dao.HibernateUtil;
 import br.com.senac.dao.TipoAtendimentoDaoImpl;
 import br.com.senac.dao.UsuarioDao;
@@ -16,26 +18,30 @@ import javax.swing.JOptionPane;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import br.com.senac.dao.TipoAtendimentoDao;
+import br.com.senac.entidade.ContadorEntrada;
 
 /**
  *
- * @author silvio.junior
+ * @author ana.correa8
  */
-public class ContadorEntrada extends javax.swing.JFrame {
+public class CadastroContadorEntrada extends javax.swing.JFrame {
 
     int contador = 0;
-    private UsuarioDao usuarioDao = new UsuarioDaoImpl();
+    private ContadorEntradaDao contadorDao = new ContadorEntradaDaoImpl();
     private Session sessao;
-    private Usuario usuario;
-    private List<TipoAtendimento> atendimentos;
+    private ContadorEntrada count;
+    // private List<TipoAtendimento> atendimentos;
 
-    public ContadorEntrada() {
+    public CadastroContadorEntrada() {
         initComponents();
+        varData.setVisible(false);
+       
 
     }
 
-    public ContadorEntrada(Usuario usuario) {
+    public CadastroContadorEntrada(ContadorEntrada count) {
         initComponents();
+         this.count = count;
 //        btSalvar.setText("Alterar");
 //        lb_titulo.setText("Alterar Usuário");
 //        carregarAlteracaoUsuario(usuario);
@@ -49,6 +55,7 @@ public class ContadorEntrada extends javax.swing.JFrame {
         lb_contador = new javax.swing.JLabel();
         btSalvar = new javax.swing.JButton();
         btVisitantes = new javax.swing.JRadioButton();
+        varData = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastro de Usuário");
@@ -72,6 +79,8 @@ public class ContadorEntrada extends javax.swing.JFrame {
         btVisitantes.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btVisitantes.setText("Visitantes");
 
+        varData.setText("jLabel1");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -86,7 +95,10 @@ public class ContadorEntrada extends javax.swing.JFrame {
                         .addComponent(btVisitantes))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(109, 109, 109)
-                        .addComponent(btSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(37, 37, 37)
+                        .addComponent(varData)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -97,7 +109,9 @@ public class ContadorEntrada extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lb_contador)
                     .addComponent(btVisitantes))
-                .addGap(48, 48, 48)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(varData)
+                .addGap(20, 20, 20)
                 .addComponent(btSalvar)
                 .addGap(0, 71, Short.MAX_VALUE))
         );
@@ -107,14 +121,25 @@ public class ContadorEntrada extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btSalvarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btSalvarMouseClicked
-        // TODO add your handling code here:
-        sessao = HibernateUtil.abrirConexao();
-        if (btVisitantes.isSelected()) {
-            contador++;
+        try {
+            sessao = HibernateUtil.abrirConexao();
+            count = new ContadorEntrada();
+            if (btVisitantes.isSelected()) {
+                contador++;
+            }
+            count.setQuantidade(contador);
+            //btSalvar.setText("" + contador);
+            contadorDao.salvarOuAlterar(count, sessao);
+            count.getData_cadastro();
+            JOptionPane.showMessageDialog(null, "Visitante contabilizados");
+            dispose();
+        } catch (HibernateException e) {
+            System.out.println("Erro ao contabilizar visitante");
+        } finally {
+            sessao.close();
         }
-        btSalvar.setText("" + contador);
-        JOptionPane.showMessageDialog(null,"Visitante contabilizados");
-        sessao.close();
+
+
     }//GEN-LAST:event_btSalvarMouseClicked
 
 //    private boolean validarFormulario() {
@@ -153,21 +178,23 @@ public class ContadorEntrada extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ContadorEntrada.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastroContadorEntrada.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ContadorEntrada.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastroContadorEntrada.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ContadorEntrada.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastroContadorEntrada.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ContadorEntrada.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastroContadorEntrada.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ContadorEntrada().setVisible(true);
+                new CadastroContadorEntrada().setVisible(true);
             }
         });
     }
@@ -177,5 +204,6 @@ public class ContadorEntrada extends javax.swing.JFrame {
     private javax.swing.JRadioButton btVisitantes;
     private javax.swing.JLabel lb_contador;
     private javax.swing.JLabel lb_titulo;
+    private javax.swing.JLabel varData;
     // End of variables declaration//GEN-END:variables
 }

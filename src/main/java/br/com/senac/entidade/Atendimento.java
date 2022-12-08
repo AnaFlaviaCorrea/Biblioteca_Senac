@@ -14,7 +14,7 @@ import javax.persistence.*;
  * @author silvio.junior
  */
 @Entity
-@Table(name = "fornecedor")
+@Table(name = "Atendimento")
 public class Atendimento implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -25,14 +25,18 @@ public class Atendimento implements Serializable {
     @Column(nullable = false)
     private String nome;
     
-    @Column(nullable = false, unique = true)
-    private String email;
+    @Column(nullable = false)
+    private String observacao; 
     
     @Column(nullable = false)
     @Temporal(TemporalType.DATE)
     private Date data_cadastro= new Date();
     
-    private boolean ativo;
+    @ManyToOne
+    @JoinColumn(name = "id_tipoAtendimento")
+    private TipoAtendimento tipoAtendimento;
+    
+   // private boolean ativo;
     
 //    @OneToOne(cascade = CascadeType.ALL)
 //    @JoinColumn(name = "id_endereco")
@@ -41,9 +45,8 @@ public class Atendimento implements Serializable {
     public Atendimento() {
     }
 
-    public Atendimento(String nome, String email, Date data_cadastro) {
+    public Atendimento(String nome, Date data_cadastro) {
         this.nome = nome;
-        this.email = email;
         this.data_cadastro = data_cadastro;
         
     }      
@@ -64,28 +67,29 @@ public class Atendimento implements Serializable {
         this.nome = nome;
     }
 
-    public String getEmail() {
-        return email;
+    public String getObservacao() {
+        return observacao;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setObservacao(String observacao) {
+        this.observacao = observacao;
     }
-
-    public boolean isAtivo() {
-        return ativo;
-    }
-
-    public void setAtivo(boolean ativo) {
-        this.ativo = ativo;
-    }
-
+    
+    
     public Date getData_cadastro() {
         return data_cadastro;
     }
 
     public void setData_cadastro(Date data_cadastro) {
         this.data_cadastro = data_cadastro;
+    }
+
+    public TipoAtendimento getTipoAtendimento() {
+        return tipoAtendimento;
+    }
+
+    public void setTipoAtendimento(TipoAtendimento tipoAtendimento) {
+        this.tipoAtendimento = tipoAtendimento;
     }
 
 

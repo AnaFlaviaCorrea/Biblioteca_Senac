@@ -26,10 +26,9 @@ import java.util.List;
 public class CadastroAtendimento extends javax.swing.JFrame {
 
     private Atendimento atendimento;
-    // private Endereco endereco;
     private AtendimentoDao atendimentoDao = new AtendimentoDaoImpl();
     private Session sessao;
-    private List<TipoAtendimento> atendimentos;
+    private List<TipoAtendimento> tiposatendimentos;
 
     /**
      * Creates new form CadastroFornecedor
@@ -37,7 +36,7 @@ public class CadastroAtendimento extends javax.swing.JFrame {
     public CadastroAtendimento() {
         initComponents();
         carregarComboTipoAtendimento();
-
+        lb_dataCadastro.setVisible(false);
         varData.setVisible(false);
 
     }
@@ -46,7 +45,6 @@ public class CadastroAtendimento extends javax.swing.JFrame {
         initComponents();
         lb_titulo.setText("Alterar Cliente");
         btSalvar.setText("Alterar");
-        carregarAlteracaoFornecedor(atendimento);
         varData.setVisible(false);
         this.atendimento = atendimento;
         //endereco = fornecedor.getEndereco();
@@ -120,11 +118,6 @@ public class CadastroAtendimento extends javax.swing.JFrame {
         jScrollPane2.setViewportView(varObservacao);
 
         varComboAtendimento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione um atendimento..." }));
-        varComboAtendimento.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                varComboAtendimentoActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -184,40 +177,26 @@ public class CadastroAtendimento extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-private void carregarAlteracaoFornecedor(Atendimento atendimento1) {
-        this.atendimento = atendimento1;
-        varNome.setText(atendimento1.getNome());
-//        varBairro.setText(fornecedor1.getEndereco().getLocalidade());
-//        varLogradouro.setText(fornecedor1.getEndereco().getLogradouro());
-//        varCep.setText(fornecedor1.getEndereco().getCep());
-//        varBairro.setText(fornecedor1.getEndereco().getNumero());
-//        varNumero.setText(fornecedor1.getEndereco().getNumero());
-//        varComplemento.setText(fornecedor1.getEndereco().getComplemento());
-//        varEstado.setText(fornecedor1.getEndereco().getUf());
-//        varObservacao.setText(fornecedor1.getEndereco().getObservacao());
-//        varCidade.setText(fornecedor1.getEndereco().getLocalidade());
 
-    }
     private void btSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSalvarActionPerformed
 
         if (validarFormulario()) {
             if (atendimento == null) {
                 atendimento = new Atendimento();
                 atendimento.getData_cadastro();
-
             }
-
-            carregarFormulario();
+               carregarFormulario();
             try {
                 sessao = HibernateUtil.abrirConexao();
+                atendimento.setObservacao(varObservacao.getText().trim());
+                atendimento.setNome(varNome.getText().trim());
                 atendimentoDao.salvarOuAlterar(atendimento, sessao);
                 JOptionPane.showMessageDialog(null, "Atendimento salvo com sucesso!");
-                dispose();
+                //dispose();
                 new TelaPrincipal().setVisible(true);
             } catch (HibernateException e) {
-                System.out.println("Erro ao salvar !");
+                System.out.println("Erro ao salvar !" + e.getMessage());
 
-                JOptionPane.showMessageDialog(null, "Já existe fornecedor com este email");
             } finally {
                 sessao.close();
             }
@@ -226,39 +205,40 @@ private void carregarAlteracaoFornecedor(Atendimento atendimento1) {
 
     }//GEN-LAST:event_btSalvarActionPerformed
     private void carregarComboTipoAtendimento() {
-        TipoAtendimentoDao perfilDao = new TipoAtendimentoDaoImpl();
+        TipoAtendimentoDao tipoatendimentoDao = new TipoAtendimentoDaoImpl();
         try {
             sessao = HibernateUtil.abrirConexao();
-            atendimentos = perfilDao.pesquisarTodos(sessao);
-            atendimentos.forEach(perfil -> {
-                varComboAtendimento.addItem(atendimento.getNome());
+            tiposatendimentos = tipoatendimentoDao.pesquisarTodos(sessao);
+            tiposatendimentos.stream().forEach(atendi -> {
+                varComboAtendimento.addItem(atendi.getNome());
             });
         } catch (HibernateException e) {
-            System.out.println("Erro ao pesquisar todos perfil " + e.getMessage());
+            System.out.println("Erro ao pesquisar todos Tipos de Atendimentos " + e.getMessage());
         } finally {
             sessao.close();
         }
 
     }
-    private void varComboAtendimentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_varComboAtendimentoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_varComboAtendimentoActionPerformed
+
     private boolean validarFormulario() {
         String nome = varNome.getText().trim();
         if (validarMenorQue3(nome)) {
             JOptionPane.showMessageDialog(null, "Digite o nome corretamente!");
             return false;
         }
-        // String email = varEmail.getText().trim();
-        return false;
+
+        return true;
 
     }
 
     private void carregarFormulario() {
-
         atendimento.setNome(varNome.getText().trim());
-        // fornecedor.setEmail(varEmail.getText().trim());
         atendimento.getData_cadastro();
+        
+        int indice = varComboAtendimento.getSelectedIndex();
+        indice--;
+        TipoAtendimento tipoatendimento = tiposatendimentos.get(indice);
+        atendimento.setTipoAtendimento(tipoatendimento);
 
 //        if (endereco.getLogradouro() != null) {
 //            endereco.setNumero(varNumero.getText().trim());

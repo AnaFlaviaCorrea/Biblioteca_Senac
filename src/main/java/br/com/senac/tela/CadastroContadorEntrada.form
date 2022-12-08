@@ -37,6 +37,10 @@
                       <EmptySpace min="-2" pref="109" max="-2" attributes="0"/>
                       <Component id="btSalvar" min="-2" pref="130" max="-2" attributes="0"/>
                   </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                      <Component id="varData" min="-2" max="-2" attributes="0"/>
+                  </Group>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
@@ -51,7 +55,9 @@
                   <Component id="lb_contador" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btVisitantes" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="varData" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
               <Component id="btSalvar" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="0" pref="71" max="32767" attributes="0"/>
           </Group>
@@ -94,6 +100,11 @@
           <Font name="Segoe UI" size="12" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Visitantes"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="varData">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel1"/>
       </Properties>
     </Component>
   </SubComponents>
