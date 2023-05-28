@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.0.final using JasperReports Library version 6.20.0-2bc7ab61c56f459e8176eb05c7705e145cd400ad  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="RelatorioEntrada" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="16a25daa-0c25-4ddf-b328-8bb2553a4843">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DataAdapter.jrdax"/>
+	<property name="com.jaspersoft.studio.data.sql.tables">
+		<![CDATA[YmlibGlvdGVjYV9zZW5hYy5jb250YWRvcmVudHJhZGEgLDE1LDE1LGJjOGQzOTQ5LTgxOGMtNGU2
+ZS04NDIwLTE4NzdkM2M0YWQwYjs=]]>
+	</property>
+	<queryString>
+		<![CDATA[SELECT data_cadastro,
+	hora,
+	quantidade
+FROM biblioteca_senac.contadorentrada]]>
+	</queryString>
+	<field name="data_cadastro" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.name" value="data_cadastro"/>
+		<property name="com.jaspersoft.studio.field.label" value="data_cadastro"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="contadorentrada"/>
+		<fieldDescription><![CDATA[data_cadastro]]></fieldDescription>
+	</field>
+	<field name="hora" class="java.sql.Time">
+		<property name="com.jaspersoft.studio.field.name" value="hora"/>
+		<property name="com.jaspersoft.studio.field.label" value="hora"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="contadorentrada"/>
+		<fieldDescription><![CDATA[hora]]></fieldDescription>
+	</field>
+	<field name="quantidade" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="quantidade"/>
+		<property name="com.jaspersoft.studio.field.label" value="quantidade"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="contadorentrada"/>
+		<fieldDescription><![CDATA[quantidade]]></fieldDescription>
+	</field>
+	<variable name="quantidade1" class="java.lang.Integer" resetType="Page" calculation="Sum">
+		<variableExpression><![CDATA[$F{quantidade}]]></variableExpression>
+	</variable>
+	<variable name="quantidade2" class="java.lang.Integer" resetType="Page" calculation="Count">
+		<variableExpression><![CDATA[$F{quantidade}]]></variableExpression>
+	</variable>
+	<variable name="data_cadastro1" class="java.lang.Integer" resetType="Page" calculation="Count">
+		<variableExpression><![CDATA[$F{data_cadastro}]]></variableExpression>
+	</variable>
+	<variable name="quantidade3" class="java.lang.Integer" resetType="Page" calculation="Average">
+		<variableExpression><![CDATA[$F{quantidade}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="42" splitType="Stretch">
+			<staticText>
+				<reportElement x="116" y="0" width="320" height="36" uuid="273170b8-2798-4c8f-ba45-aad0447b7328"/>
+				<textElement>
+					<font size="19"/>
+				</textElement>
+				<text><![CDATA[Relatório de Entrada na Bibliotéca]]></text>
+			</staticText>
+			<line>
+				<reportElement x="-17" y="36" width="581" height="1" uuid="cbe0cef2-6009-4072-b2db-f70c066c521a"/>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="58" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement x="1" y="0" width="100" height="14" uuid="a83df75b-98ff-4fe5-aeeb-cb342f12fd8e">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="fa3be130-bd09-42b3-8b28-7074093048ae"/>
+				</reportElement>
+				<text><![CDATA[Data]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="203" y="0" width="100" height="14" uuid="6efb3d4d-d3e0-46bd-9822-edc7f06f3310">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2f9709b5-e7aa-46d5-90f6-b90099351761"/>
+				</reportElement>
+				<text><![CDATA[Hora]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="318" y="2" width="100" height="14" uuid="9120d95b-3d19-45de-8ac7-21b9c383940f">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6a00e141-bb94-4c08-8294-70b5a71250d1"/>
+				</reportElement>
+				<text><![CDATA[Quantidade]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="26" splitType="Stretch">
+			<textField>
+				<reportElement x="1" y="4" width="100" height="16" uuid="f94df09f-7580-468c-82b6-6f1d49124302">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="fa3be130-bd09-42b3-8b28-7074093048ae"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{data_cadastro}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="201" y="8" width="100" height="15" uuid="d35fa886-5359-4dcf-975b-fed09ba4b900">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2f9709b5-e7aa-46d5-90f6-b90099351761"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{hora}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="318" y="10" width="100" height="16" uuid="390b660c-a6fb-484e-87ea-5ff138cc667c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6a00e141-bb94-4c08-8294-70b5a71250d1"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{quantidade}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="47" splitType="Stretch">
+			<line>
+				<reportElement x="-17" y="0" width="581" height="1" uuid="b8b3181f-e2f7-4e47-8126-144e884cfcda"/>
+			</line>
+			<textField>
+				<reportElement x="164" y="17" width="292" height="13" uuid="0fb4e7de-aa85-49bf-8788-0a5639ce737e"/>
+				<textFieldExpression><![CDATA["Página " + $V{PAGE_NUMBER} + " de " + $V{PAGE_COUNT}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="48" splitType="Stretch">
+			<textField>
+				<reportElement x="372" y="13" width="100" height="14" uuid="ccb05da9-9e44-4b58-bd4a-741ce2727bdc"/>
+				<textElement verticalAlignment="Top"/>
+				<textFieldExpression><![CDATA[$V{quantidade2}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="333" y="13" width="39" height="23" uuid="70e0e617-51ff-4738-a90d-5b7c3fddd19a"/>
+				<text><![CDATA[Total :]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

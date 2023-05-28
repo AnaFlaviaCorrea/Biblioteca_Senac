@@ -64,44 +64,57 @@ public class CadastroAtendimento extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel2 = new javax.swing.JPanel();
         lb_titulo = new javax.swing.JLabel();
-        lb_nome = new javax.swing.JLabel();
+        lb_nome2 = new javax.swing.JLabel();
         varNome = new javax.swing.JTextField();
-        lb_nome1 = new javax.swing.JLabel();
+        lb_tipoAtendimento = new javax.swing.JLabel();
+        varComboAtendimento = new javax.swing.JComboBox<>();
         lb_dataCadastro = new javax.swing.JLabel();
         varData = new javax.swing.JFormattedTextField();
-        lb_cep = new javax.swing.JLabel();
-        btSalvar = new javax.swing.JButton();
-        lb_cpf6 = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
+        jScrollPane3 = new javax.swing.JScrollPane();
         varObservacao = new javax.swing.JTextArea();
-        varComboAtendimento = new javax.swing.JComboBox<>();
+        btSalvar = new javax.swing.JButton();
+        lb_observacao = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Cadastro de Fornecedor");
+        setTitle("Cadastro de Atendimento");
+        setBackground(new java.awt.Color(255, 255, 255));
 
+        jPanel2.setBackground(new java.awt.Color(247, 139, 31));
+
+        lb_titulo.setBackground(new java.awt.Color(247, 139, 31));
         lb_titulo.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        lb_titulo.setForeground(new java.awt.Color(0, 85, 148));
         lb_titulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lb_titulo.setText("Cadastro Atendimento");
 
-        lb_nome.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        lb_nome.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lb_nome.setText("Nome:");
+        lb_nome2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lb_nome2.setForeground(new java.awt.Color(0, 85, 148));
+        lb_nome2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lb_nome2.setText("Nome:");
 
-        lb_nome1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        lb_nome1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lb_nome1.setText("Tipo de Atendimento: ");
+        lb_tipoAtendimento.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lb_tipoAtendimento.setForeground(new java.awt.Color(0, 85, 148));
+        lb_tipoAtendimento.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lb_tipoAtendimento.setText("Tipo de Atendimento: ");
 
-        lb_dataCadastro.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        varComboAtendimento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione um atendimento..." }));
+
+        lb_dataCadastro.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lb_dataCadastro.setForeground(new java.awt.Color(0, 85, 148));
         lb_dataCadastro.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lb_dataCadastro.setText("Data do Atendimento: ");
 
         varData.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter()));
 
-        lb_cep.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        lb_cep.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        varObservacao.setColumns(20);
+        varObservacao.setRows(5);
+        jScrollPane3.setViewportView(varObservacao);
 
+        btSalvar.setBackground(new java.awt.Color(0, 85, 148));
         btSalvar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btSalvar.setForeground(new java.awt.Color(255, 255, 255));
         btSalvar.setText("Salvar");
         btSalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -109,69 +122,85 @@ public class CadastroAtendimento extends javax.swing.JFrame {
             }
         });
 
-        lb_cpf6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        lb_cpf6.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lb_cpf6.setText("Observação:");
+        lb_observacao.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lb_observacao.setForeground(new java.awt.Color(0, 85, 148));
+        lb_observacao.setText("Observação:");
 
-        varObservacao.setColumns(20);
-        varObservacao.setRows(5);
-        jScrollPane2.setViewportView(varObservacao);
-
-        varComboAtendimento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione um atendimento..." }));
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(lb_tipoAtendimento)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(lb_nome2, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(varNome, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(varComboAtendimento, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(53, 53, 53))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lb_dataCadastro)
+                            .addComponent(lb_observacao))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 287, Short.MAX_VALUE)
+                            .addComponent(varData))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lb_titulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(28, 28, 28))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(169, 169, 169)
+                .addComponent(btSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addComponent(lb_titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(47, 47, 47)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(varNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lb_nome2))
+                .addGap(25, 25, 25)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lb_tipoAtendimento)
+                    .addComponent(varComboAtendimento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lb_dataCadastro)
+                    .addComponent(varData, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lb_observacao))
+                .addGap(18, 18, 18)
+                .addComponent(btSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lb_titulo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lb_nome, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lb_cep, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lb_dataCadastro)
-                    .addComponent(lb_nome1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(varNome, javax.swing.GroupLayout.DEFAULT_SIZE, 245, Short.MAX_VALUE)
-                    .addComponent(varComboAtendimento, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(varData))
-                .addContainerGap(177, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(242, 242, 242)
-                .addComponent(btSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lb_cpf6, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(53, 53, 53)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 486, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lb_titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lb_nome)
-                    .addComponent(varNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lb_nome1)
-                    .addComponent(varComboAtendimento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lb_dataCadastro)
-                    .addComponent(varData, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(20, 20, 20)
-                .addComponent(lb_cep)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lb_cpf6)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 86, Short.MAX_VALUE)
-                .addComponent(btSalvar)
-                .addGap(49, 49, 49))
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -185,7 +214,7 @@ public class CadastroAtendimento extends javax.swing.JFrame {
                 atendimento = new Atendimento();
                 atendimento.getData_cadastro();
             }
-               carregarFormulario();
+            carregarFormulario();
             try {
                 sessao = HibernateUtil.abrirConexao();
                 atendimento.setObservacao(varObservacao.getText().trim());
@@ -202,7 +231,6 @@ public class CadastroAtendimento extends javax.swing.JFrame {
             }
 
         }
-
     }//GEN-LAST:event_btSalvarActionPerformed
     private void carregarComboTipoAtendimento() {
         TipoAtendimentoDao tipoatendimentoDao = new TipoAtendimentoDaoImpl();
@@ -287,6 +315,10 @@ public class CadastroAtendimento extends javax.swing.JFrame {
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -298,12 +330,12 @@ public class CadastroAtendimento extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btSalvar;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JLabel lb_cep;
-    private javax.swing.JLabel lb_cpf6;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JLabel lb_dataCadastro;
-    private javax.swing.JLabel lb_nome;
-    private javax.swing.JLabel lb_nome1;
+    private javax.swing.JLabel lb_nome2;
+    private javax.swing.JLabel lb_observacao;
+    private javax.swing.JLabel lb_tipoAtendimento;
     private javax.swing.JLabel lb_titulo;
     private javax.swing.JComboBox<String> varComboAtendimento;
     private javax.swing.JFormattedTextField varData;

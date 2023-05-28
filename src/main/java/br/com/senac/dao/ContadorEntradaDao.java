@@ -6,6 +6,7 @@
 package br.com.senac.dao;
 
 import br.com.senac.entidade.ContadorEntrada;
+import java.util.Date;
 import java.util.List;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -18,4 +19,11 @@ public interface ContadorEntradaDao extends BaseDao<ContadorEntrada, Long> {
 
     List<ContadorEntrada> pesquisarPorNome(String nome, Session sessao) throws HibernateException;
     
+    List<ContadorEntrada> pesquisarPorPeriodo(Date dataInicio,Date dataFim, Session sessao) throws HibernateException;
+
+    List<ContadorEntrada> pesquisarPorData(Date dataInicio,Date dataFim, Session sessao) throws HibernateException;
+    
+    List<ContadorEntrada> pesquisarPorMes(Date dataInicio,Date dataFim, Session sessao) throws HibernateException;
+
+   ContadorEntrada contemAberturaDataCadastro(Session sessao) throws HibernateException;
 }

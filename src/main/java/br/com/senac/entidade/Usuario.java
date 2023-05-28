@@ -6,7 +6,6 @@
 package br.com.senac.entidade;
 
 import java.io.Serializable;
-import java.util.Date;
 import javax.persistence.*;
 
 /**
@@ -34,13 +33,7 @@ public class Usuario implements Serializable {
     
     private boolean ativo;
     
-    @Temporal(TemporalType.DATE)
-    @Column(name = "ultimo_acesso")
-    private Date ultimoAcesso;
-    
-    @ManyToOne
-    @JoinColumn(name = "id_perfil")
-    private TipoAtendimento perfil;
+
 
     public Usuario() {
     }
@@ -82,22 +75,6 @@ public class Usuario implements Serializable {
 
     public void setSenha(String senha) {
         this.senha = senha;
-    }
-
-    public Date getUltimoAcesso() {
-        return ultimoAcesso;
-    }
-
-    public void setUltimoAcesso(Date ultimoAcesso) {
-        this.ultimoAcesso = ultimoAcesso;
-    }
-
-    public TipoAtendimento getPerfil() {
-        return perfil;
-    }
-
-    public void setPerfil(TipoAtendimento perfil) {
-        this.perfil = perfil;
     }
 
     public boolean isAtivo() {

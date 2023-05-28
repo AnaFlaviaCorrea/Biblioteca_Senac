@@ -6,6 +6,8 @@
 package br.com.senac.entidade;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
+import java.util.Calendar;
 import java.util.Date;
 import javax.persistence.*;
 
@@ -21,24 +23,25 @@ public class ContadorEntrada implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
+
     @Column(nullable = false)
     private int quantidade;
-        
+
     @Column(nullable = false)
     @Temporal(TemporalType.DATE)
-    private Date data_cadastro= new Date();
-    
-//    @OneToOne(cascade = CascadeType.ALL)
-//    @JoinColumn(name = "id_endereco")
-    //private Endereco endereco;
+    private Date data_cadastro = new Date();
+
+    @Column(nullable = false)
+    @Temporal(TemporalType.TIME)
+    private Date hora = new Date();
+
 
     public ContadorEntrada() {
     }
 
     public ContadorEntrada(Date data_cadastro) {
-        this.data_cadastro= data_cadastro;
-    }    
+        this.data_cadastro = data_cadastro;
+    }
 
     public Long getId() {
         return id;
@@ -52,7 +55,6 @@ public class ContadorEntrada implements Serializable {
         this.quantidade = quantidade;
     }
 
-    
     public Date getData_cadastro() {
         return data_cadastro;
     }
@@ -61,8 +63,14 @@ public class ContadorEntrada implements Serializable {
         this.data_cadastro = data_cadastro;
     }
 
-  
-   
+    public Date getHora() {
+        return hora;
+    }
+
+    public void setHora(Date hora) {
+        this.hora = hora;
+    }
+
 
     @Override
     public int hashCode() {
@@ -84,5 +92,5 @@ public class ContadorEntrada implements Serializable {
     public String toString() {
         return "br.com.senac.entidade.Cliente[ id=" + id + " ]";
     }
-    
+
 }
